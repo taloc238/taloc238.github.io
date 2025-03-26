@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NgocMinh's wedding</title>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Open+Sans&display=swap" >
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      height: 100vh;
+      display: flex;
+    }
+
+    .fade {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .left-half, .right-half {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .left-half {
+      background-image: url('hinhcuoi.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .right-half {
+      background: linear-gradient(to bottom right, #fffaf0, #ffe4e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 50px;
+      border-radius: 32px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      width: 85%;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .heading {
+      font-family: 'Great Vibes', cursive;
+      font-size: 64px;
+      color: #b76e79;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #5a3e36;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #a0522d;
+      margin: 30px 0 20px 0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .confirm-btn, .decline-btn, .submit-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #ff8fa3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .decline-btn {
+      background-color: #ccc;
+    }
+
+    .confirm-btn:hover, .submit-btn:hover {
+      background-color: #e76b84;
+    }
+
+    .decline-btn:hover {
+      background-color: #aaa;
+    }
+
+    .form-section {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .google-form-container iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .thank-you-message {
+      display: none;
+      margin-top: 20px;
+      color: #a0522d;
+      font-size: 18px;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .qr-code {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .left-half, .right-half {
+        width: 100%;
+        height: 50vh;
+      }
+      .card {
+        width: 90%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="left-half"></div>
+  <div class="right-half">
+    <div class="card fade">
+      <div class="heading">Thiệp Mời</div>
+      <h2 class="subheading">Trân trọng kính mời</h2>
+      <div class="content">Bạn và người thương đến dự buổi tiệc cưới của chúng tôi</div>
+      <div class="names">Ngọc & Minh</div>
+      <div class="content">
+        Vào lúc 17:30 ngày 30 tháng 4 năm 2025<br>
+        Tại Hotel Colline, Phan Bội Châu, Phường 1, Đà Lạt
+      </div>
+      <div class="footer">
+        Sự hiện diện của bạn là niềm vinh hạnh cho chúng tôi ♥<br>
+        Vui lòng xác nhận tham dự trước ngày 20/04/2025
+      </div>
+	  <button class="confirm-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdKRp3ZvC5I3FQ3Mons7YM3VwsTPtxItQK5nKcQxOrr0oxrhg/viewform?usp=sf_link', '_blank')">Tôi sẽ tham dự</button>
+	  <button class="confirm-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdKRp3ZvC5I3FQ3Mons7YM3VwsTPtxItQK5nKcQxOrr0oxrhg/viewform?usp=sf_link', '_blank')">Rất tiếc, tôi không thể đến</button>
+      <div class="thank-you-message">Cảm ơn bạn đã phản hồi! Hẹn gặp lại trong ngày trọng đại ♥</div><br>
+      <div class="qr-code">
+        <img src="qrcode.jpg" alt="QR code" width="150">
+        <div style="font-size:14px; color:#555; margin-top:10px;">Gửi thiệp hồng cho đôi tình nhân trẻ 💌</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
