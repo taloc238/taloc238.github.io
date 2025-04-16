@@ -1,182 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Tạ Lộc</title>
-    <meta name="author" content="Tạ Thị Lộc">
-    <meta name="description" content="Thiết kế Web">
-    <meta name="keywords" content="20CT2101, Thiết kế Web, khoa Sư phạm, trường Đại học Đà Lạt">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <title>Tạ Lộc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
 
-        .topnav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            background-color: #43464f;
-            padding: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    body {
+      background: linear-gradient(to right, #f9e7f0, #fffafc);
+      color: #333;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .topnav a {
-            color: #fff;
-            padding: 12px 18px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: 0.3s;
-            border-radius: 5px;
-        }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #f8c4da;
+      padding: 12px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-bottom: 2px solid #efacc9;
+      margin: 20px 0;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 1200px;
+    }
 
-        .topnav a:hover {
-            background-color: #FFD4F7;
-            color: black;
-        }
+    .topnav a,
+    .dropdown .dropbtn {
+      color: #111;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+    }
 
-        .topnav a.active {
-            background-color: #FFD4F7;
-            color: black;
-        }
+    .topnav a:hover,
+    .dropdown:hover .dropbtn,
+    .topnav a.active {
+      color: #d94a8d;
+      background: #fff0f7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(217, 74, 141, 0.2);
+    }
 
-        /* Dropdown menu */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+    .dropdown {
+      position: relative;
+    }
 
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            color: #fff;
-            padding: 12px 18px;
-            font-size: 17px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    .dropdown .dropbtn::after {
+      content: " ▼";
+      color: #fff;
+      font-weight: normal;
+      position: relative;
+      z-index: 1;
+    }
 
-        .dropdown:hover .dropbtn {
-            background-color: #FFD4F7;
-            color: black;
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 8px;
+      border: 1px solid #f3d0e1;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
+    .dropdown-content a {
+      color: #555;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      transition: background 0.2s ease;
+    }
 
-        .dropdown-content a {
-            color: #333;
-            padding: 10px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+    .dropdown-content a:hover {
+      background: #ffe0ef;
+    }
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .content {
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      width: 90%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
 
-        .content {
-            padding: 60px 20px;
-        }
+    .content:hover {
+      transform: translateY(-5px);
+    }
 
-        .content h1 {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: #444;
-        }
+    .content h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      color: #cc3e7b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg, #cc3e7b, #d94a8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .content p {
-            font-size: 18px;
-            color: #666;
-        }
+    .content p {
+      font-size: 18px;
+      color: #444;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
 
-        @media (max-width: 768px) {
-            .topnav {
-                flex-direction: column;
-            }
+    .bow-icon {
+      font-size: 28px;
+      color: #d94a8d;
+      transition: transform 0.3s ease;
+    }
 
-            .topnav a, .dropdown .dropbtn {
-                padding: 10px;
-                width: 100%;
-                text-align: center;
-            }
+    .content:hover .bow-icon {
+      transform: scale(1.2);
+    }
 
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                background-color: #f9f9f9;
-                width: 100%;
-            }
+    @media (max-width: 768px) {
+      .topnav {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
 
-            .dropdown-content a {
-                border-bottom: 1px solid #ddd;
-            }
-        }
-    </style>
+      .topnav a,
+      .dropdown .dropbtn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #fdf3f9;
+        border: none;
+      }
+
+      .dropdown-content a {
+        border-bottom: 1px solid #f3d0e1;
+      }
+
+      .content h1 {
+        font-size: 28px;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .bow-icon {
+        font-size: 22px;
+      }
+
+      .content {
+        width: 95%;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="topnav">
-        <a href="lab01/index.html">Lab 1</a>
-        <a href="lab02/index.html">Lab 2</a>
-        <a href="lab3/index.html">Lab 3</a>
-		
-		<div class="dropdown">
-            <button class="dropbtn">Lab 4 ▼</button>
-            <div class="dropdown-content">
-				<a href="lab04/login.html">Đăng nhập</a>
-				<a href="lab04/registration.html">Đăng ký học phần</a>
-                <a href="lab04/contact.html">Liên hệ</a>
-            </div>
-        </div>
-		
-        <a href="lab05/index.html">Lab 5</a>
-        <a href="lab06/index.html">Lab 6</a>
-        <a href="lab07/index.html">Lab 7</a>
+  <div class="topnav">
+    <a href="lab01/index.html">Lab 1</a>
+    <a href="lab02/index.html">Lab 2</a>
+    <a href="lab3/index.html">Lab 3</a>
 
-        <div class="dropdown">
-            <button class="dropbtn">Lab 8 ▼</button>
-            <div class="dropdown-content">
-                <a href="lab08/invitation/index.html">Thiệp mời tân gia</a>
-                <a href="lab08/clock/index.html">Clock</a>
-            </div>
-        </div>
-		<div class="dropdown">
-            <button class="dropbtn">Lab 9 ▼</button>
-            <div class="dropdown-content">
-                <a href="lab09/canvas/index.html">Canvas</a>
-                <a href="lab09/clock/index.html">Đồng hồ</a>
-				<a href="lab09/dice/index.html">Xúc sắc</a>
-            </div>
-        </div>
-        <a href="btvn_2211198_TaThiLoc_THK46SP_Bai07/index.html">BTVN #7</a>
+    <div class="dropdown">
+      <button class="dropbtn">Lab 4</button>
+      <div class="dropdown-content">
+        <a href="lab04/login.html">Đăng nhập</a>
+        <a href="lab04/registration.html">Đăng ký học phần</a>
+        <a href="lab04/contact.html">Liên hệ</a>
+      </div>
     </div>
 
-    <div class="content">
-        <h1>Trang chủ</h1>
-		<p>Đây là trang nộp bài tập môn Thiết kế Web của Tạ Lộc</p>
-        <p>Website này được lưu trữ trên <strong>GitHub Pages</strong>.</p>
+    <a href="lab05/index.html">Lab 5</a>
+    <a href="lab06/index.html">Lab 6</a>
+    <a href="lab07/index.html">Lab 7</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Lab 8</button>
+      <div class="dropdown-content">
+        <a href="lab08/invitation/index.html">Thiệp mời tân gia</a>
+        <a href="lab08/clock/index.html">Clock</a>
+      </div>
     </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Lab 9</button>
+      <div class="dropdown-content">
+        <a href="lab09/canvas/index.html">Canvas</a>
+        <a href="lab09/clock/index.html">Đồng hồ</a>
+        <a href="lab09/dice/index.html">Xúc sắc</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Lab 10</button>
+      <div class="dropdown-content">
+        <a href="lab10/advcalculator/index.html">Máy tính có CSS</a>
+        <a href="lab10/calculator/index.html">Máy tính</a>
+        <a href="lab10/register/index.html">Đăng ký tài khoản</a>
+      </div>
+    </div>
+
+    <a href="btvn_2211198_TaThiLoc_THK46SP_Bai07/index.html">BTVN #7</a>
+  </div>
+
+  <div class="content">
+    <h1>
+      <span class="bow-icon">🎀</span>
+      Trang chủ
+      <span class="bow-icon">🎀</span>
+    </h1>
+    <p>Đây là trang nộp bài tập môn Thiết kế Web của Tạ Lộc</p>
+    <p>Website này được lưu trữ trên <strong>GitHub Pages</strong>.</p>
+  </div>
 </body>
 </html>

@@ -1,0 +1,71 @@
+body { 
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	font-size: 20px;
+	background-color: #f1f1f1;
+}
+
+form {
+	border: 2px solid #ccc;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+}
+
+table {
+	padding: 5px;
+}
+
+input {
+	padding: 15px;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 60px;
+	margin: 5px;
+	font-size: 18px;
+	transition: all 0.2s ease-in-out;
+}
+
+input[type="text"] {
+	color: black;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 230px;
+	text-align: right;
+	box-shadow: none;
+}
+
+input[type="button"] {
+	background-color: #3399ff;
+}
+
+input[type="button"]:hover {
+	background-color: #1a8cff;
+}
+
+input[name="btnClear"], input[name="btnClearEntry"] {
+	background-color: #d9534f;
+}
+
+input[name="btnClear"]:hover, input[name="btnClearEntry"]:hover {
+	background-color: #c9302c;
+}
+
+input[name="btnEquals"] {
+	background-color: #5cb85c;
+	width: 130px;
+}
+
+input[name="btnEquals"]:hover {
+	background-color: #4cae4c;
+}
