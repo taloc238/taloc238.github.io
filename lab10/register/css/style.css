@@ -98,3 +98,34 @@ label{
 	gap:10px;
 	justify-content:center;
 }
+input[type="button"] {
+	background-color: #3399ff;
+	width: 60px;
+	height: 60px; /* thêm dòng này để vuông */
+}
+
+input[type="button"]:hover {
+	background-color: #1a8cff;
+}
+
+/* Nút CE, C */
+input[name="btnClear"], input[name="btnClearEntry"] {
+	background-color: #d9534f;
+	width: 60px;
+	height: 60px; /* vuông luôn */
+}
+
+input[name="btnClear"]:hover, input[name="btnClearEntry"]:hover {
+	background-color: #c9302c;
+}
+
+/* Nút = có thể giữ to hoặc cũng làm vuông */
+input[name="btnEquals"] {
+	background-color: #5cb85c;
+	width: 60px;  /* để vuông */
+	height: 60px;
+}
+
+input[name="btnEquals"]:hover {
+	background-color: #4cae4c;
+}
